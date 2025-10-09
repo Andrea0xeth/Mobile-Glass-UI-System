@@ -1,29 +1,29 @@
 # 🌊 LiquidUI - The Most Fluid UI Library
 
-**LiquidUI** è la libreria di componenti UI più fluida e rivoluzionaria mai creata! Ogni componente è progettato con effetti liquid glass, animazioni fluide e feedback aptico per un'esperienza utente straordinaria.
+**LiquidUI** is the most fluid and revolutionary UI component library ever created! Every component is designed with liquid glass effects, smooth animations, and haptic feedback for an extraordinary user experience.
 
-## ✨ Caratteristiche
+## ✨ Features
 
-- 🌊 **Liquid Glass Effects** - Effetti vetro liquido nativi iOS
-- ✨ **Shimmer Animations** - Animazioni scintillanti fluide
-- 💫 **Glow Effects** - Effetti luminosi dinamici
-- 🎭 **Haptic Feedback** - Feedback tattile per ogni interazione
-- 🌈 **Dynamic Themes** - Temi colorati dinamici
-- 📱 **Native iOS Glass** - Utilizzo di UIVisualEffectView nativo
-- 🚀 **Performance Ottimizzate** - 60fps garantiti
-- ♿ **Accessibility** - Supporto completo per accessibilità
+- 🌊 **Liquid Glass Effects** - Native iOS liquid glass effects
+- ✨ **Shimmer Animations** - Smooth shimmer animations
+- 💫 **Glow Effects** - Dynamic glow effects
+- 🎭 **Haptic Feedback** - Tactile feedback for every interaction
+- 🌈 **Dynamic Themes** - Dynamic colored themes
+- 📱 **Native iOS Glass** - Using native UIVisualEffectView
+- 🚀 **Optimized Performance** - Guaranteed 60fps
+- ♿ **Accessibility** - Complete accessibility support
 
-## 🎨 Temi Disponibili
+## 🎨 Available Themes
 
-- **Ocean** - Blu oceano con sfumature turchesi
-- **Aurora** - Rosa e magenta con effetti aurora
-- **Cosmic** - Viola e viola con effetti cosmici
-- **Forest** - Verde smeraldo con effetti naturali
+- **Ocean** - Ocean blue with turquoise shades
+- **Aurora** - Pink and magenta with aurora effects
+- **Cosmic** - Purple and violet with cosmic effects
+- **Forest** - Emerald green with natural effects
 
-## 🧩 Componenti
+## 🧩 Components
 
 ### LiquidButton
-Pulsanti con effetti liquid glass, animazioni fluide e feedback aptico.
+Buttons with liquid glass effects, smooth animations, and haptic feedback.
 
 ```tsx
 <LiquidButton
@@ -37,7 +37,7 @@ Pulsanti con effetti liquid glass, animazioni fluide e feedback aptico.
 ```
 
 ### LiquidCard
-Carte con effetti liquid glass, animazioni floating e shimmer.
+Cards with liquid glass effects, floating animations, and shimmer.
 
 ```tsx
 <LiquidCard
@@ -51,7 +51,7 @@ Carte con effetti liquid glass, animazioni floating e shimmer.
 ```
 
 ### LiquidInput
-Input con effetti liquid glass, animazioni focus e validazione.
+Input with liquid glass effects, focus animations, and validation.
 
 ```tsx
 <LiquidInput
@@ -65,7 +65,7 @@ Input con effetti liquid glass, animazioni focus e validazione.
 ```
 
 ### LiquidTabBar
-Tab bar con effetti liquid glass, animazioni bubble e floating.
+Tab bar with liquid glass effects, bubble animations, and floating.
 
 ```tsx
 <LiquidTabBar
@@ -79,7 +79,7 @@ Tab bar con effetti liquid glass, animazioni bubble e floating.
 ```
 
 ### LiquidModal
-Modal con effetti liquid glass, animazioni entrance e backdrop blur.
+Modal with liquid glass effects, entrance animations, and backdrop blur.
 
 ```tsx
 <LiquidModal
@@ -94,17 +94,17 @@ Modal con effetti liquid glass, animazioni entrance e backdrop blur.
 </LiquidModal>
 ```
 
-## 🚀 Installazione
+## 🚀 Installation
 
 ```bash
-# Installa le dipendenze
+# Install dependencies
 npm install
 
-# Avvia l'app
+# Start the app
 npm start
 ```
 
-## 🎯 Utilizzo
+## 🎯 Usage
 
 ```tsx
 import { 
@@ -132,56 +132,58 @@ export default function App() {
 
 ## 🌊 Liquid Engine
 
-Il **Liquid Engine** è il cuore pulsante di LiquidUI. Fornisce:
+The **Liquid Engine** is the beating heart of LiquidUI. It provides:
 
-- **Liquid Wave Effects** - Effetti onda liquida
-- **Shimmer Animations** - Animazioni scintillanti
-- **Glow Effects** - Effetti luminosi
-- **Haptic Feedback** - Feedback tattile
-- **Theme Management** - Gestione temi dinamici
+- **Liquid Wave Effects** - Liquid wave effects
+- **Shimmer Animations** - Shimmer animations
+- **Glow Effects** - Glow effects
+- **Haptic Feedback** - Tactile feedback
+- **Theme Management** - Dynamic theme management
 
-## 🎨 Personalizzazione
+## 🎨 Customization
 
-Ogni componente può essere personalizzato con:
+Every component can be customized with:
 
-- **Temi** - Ocean, Aurora, Cosmic, Forest
-- **Varianti** - Primary, Secondary, Ghost, Liquid
-- **Dimensioni** - Small, Medium, Large
-- **Effetti** - Wave, Shimmer, Glow, Haptic
-- **Animazioni** - Scale, Rotate, Float, Ripple
+- **Themes** - Ocean, Aurora, Cosmic, Forest
+- **Variants** - Primary, Secondary, Ghost, Liquid
+- **Sizes** - Small, Medium, Large
+- **Effects** - Wave, Shimmer, Glow, Haptic
+- **Animations** - Scale, Rotate, Float, Ripple
 
-## 📱 Compatibilità
+## 📱 Compatibility
 
-- **iOS** - Supporto completo per UIVisualEffectView
-- **Android** - Fallback con BlurView
-- **Expo** - Compatibile con Expo SDK 54+
-- **React Native** - Compatibile con RN 0.81+
+- **iOS** - Full support for UIVisualEffectView
+- **Android** - Fallback with BlurView
+- **Expo** - Compatible with Expo SDK 54+
+- **React Native** - Compatible with RN 0.81+
 
 ## 🚀 Performance
 
-- **60fps** - Animazioni fluide garantite
-- **Native Glass** - Utilizzo di API native iOS
-- **Optimized** - Ottimizzato per performance
-- **Memory Efficient** - Gestione memoria ottimizzata
+- **60fps** - Guaranteed smooth animations
+- **Native Glass** - Using native iOS APIs
+- **Optimized** - Optimized for performance
+- **Memory Efficient** - Optimized memory management
 
 ## 🎯 Best Practices
 
-1. **Usa LiquidEngineProvider** per gestire lo stato globale
-2. **Scegli il tema giusto** per la tua app
-3. **Abilita gli effetti** per un'esperienza fluida
-4. **Testa su dispositivi reali** per verificare le performance
-5. **Usa haptic feedback** per migliorare l'UX
+1. **Use LiquidEngineProvider** to manage global state
+2. **Choose the right theme** for your app
+3. **Enable effects** for a fluid experience
+4. **Test on real devices** to verify performance
+5. **Use haptic feedback** to improve UX
 
-## 🌊 Esempi
+## 🌊 Examples
 
-Vedi la cartella `examples/` per esempi completi di utilizzo.
+See the `examples/` folder for complete usage examples.
 
-## 📄 Licenza
+## 📄 License
 
-MIT License - Usa liberamente nei tuoi progetti!
+MIT License - Use freely in your projects!
 
 ---
 
-**LiquidUI** - Dove l'UI incontra la fluidità! 🌊✨
+**LiquidUI** - Where UI meets fluidity! 🌊✨
 
+---
 
+Created with ♥ by [Andrea0x.eth](https://andrea0x.me)
