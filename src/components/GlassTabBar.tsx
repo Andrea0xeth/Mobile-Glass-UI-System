@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Animated } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 import { GlassView } from 'expo-glass-effect';
 import { Tab } from '../types';
 
@@ -14,17 +15,24 @@ export const TabBar: React.FC<GlassTabBarProps> = ({
   activeTab, 
   onTabChange 
 }) => {
+  const TAB_BAR_HEIGHT = 72;
+  const TAB_BAR_PADDING = 10;
+  const BUBBLE_HEIGHT = 52;
+  const MIN_BUBBLE_WIDTH = 74;
   const [containerWidth, setContainerWidth] = useState(0);
   const bubbleX = useRef(new Animated.Value(0)).current;
   
   // When on Design System page, keep Settings highlighted in nav
   const displayActiveKey = activeTab === 'designSystem' ? 'settings' : activeTab;
   const activeIndex = tabs.findIndex((t) => t.key === displayActiveKey);
-  const H_PADDING = 8; // Match the tabBar paddingHorizontal
+  const H_PADDING = TAB_BAR_PADDING; // Match the tabBar paddingHorizontal
   
   const tabSlot = containerWidth > 0 ? (containerWidth - H_PADDING * 2) / tabs.length : 0;
-  const bubbleWidth = 60; // Fixed width for square selector
+  const bubbleWidth = tabSlot > 0
+    ? Math.max(MIN_BUBBLE_WIDTH, tabSlot - 10)
+    : MIN_BUBBLE_WIDTH;
   const bubbleLeft = tabSlot > 0 ? H_PADDING + activeIndex * tabSlot + (tabSlot - bubbleWidth) / 2 : 0;
+  const bubbleTop = (TAB_BAR_HEIGHT - BUBBLE_HEIGHT) / 2;
 
   React.useEffect(() => {
     if (tabSlot > 0 && activeIndex >= 0) {
@@ -49,16 +57,45 @@ export const TabBar: React.FC<GlassTabBarProps> = ({
         {/* Moving Glass Bubble for active tab */}
         {containerWidth > 0 && activeIndex >= 0 && (
           <Animated.View
+            pointerEvents="none"
             style={[
               styles.activeBubble,
-              { left: bubbleX, width: bubbleWidth },
+              { left: bubbleX, width: bubbleWidth, height: BUBBLE_HEIGHT, top: bubbleTop, borderRadius: BUBBLE_HEIGHT / 2 },
             ]}
           >
             <GlassView
-              style={[StyleSheet.absoluteFillObject, { borderRadius: 15 }]}
+              style={[StyleSheet.absoluteFillObject, { borderRadius: BUBBLE_HEIGHT / 2 }]}
               glassEffectStyle="clear"
-              isInteractive={true}
-              tintColor="rgba(255,255,255,0.2)"
+              isInteractive={false}
+              tintColor="rgba(255,255,255,0.14)"
+            />
+            <LinearGradient
+              pointerEvents="none"
+              colors={[
+                'rgba(255,255,255,0.5)',
+                'rgba(255,255,255,0.18)',
+                'rgba(255,255,255,0.04)',
+              ]}
+              start={{ x: 0.2, y: 0 }}
+              end={{ x: 0.9, y: 1 }}
+              style={[StyleSheet.absoluteFillObject, { borderRadius: BUBBLE_HEIGHT / 2 }]}
+            />
+            <LinearGradient
+              pointerEvents="none"
+              colors={[
+                'rgba(0,0,0,0.0)',
+                'rgba(0,0,0,0.08)',
+                'rgba(0,0,0,0.16)',
+              ]}
+              start={{ x: 0.5, y: 0.6 }}
+              end={{ x: 0.5, y: 1 }}
+              style={[StyleSheet.absoluteFillObject, { borderRadius: BUBBLE_HEIGHT / 2 }]}
+            />
+            <View
+              style={[
+                styles.activeBubbleInnerStroke,
+                { borderRadius: BUBBLE_HEIGHT / 2 - 2 },
+              ]}
             />
           </Animated.View>
         )}
@@ -98,32 +135,37 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    paddingHorizontal: 8,
+    paddingHorizontal: 10,
     paddingBottom: 34,
   },
   tabBar: {
     flexDirection: 'row',
-    height: 70,
-    borderRadius: 18,
-    paddingHorizontal: 8,
+    height: 72,
+    borderRadius: 32,
+    paddingHorizontal: 10,
     alignItems: 'center',
     justifyContent: 'space-around',
+    overflow: 'hidden',
   },
   activeBubble: {
     position: 'absolute',
-    height: 60,
-    width: 60,
-    borderRadius: 15,
-    top: 5,
     zIndex: 1,
+    overflow: 'hidden',
+    borderWidth: 0.75,
+    borderColor: 'rgba(255,255,255,0.22)',
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
       height: 2,
     },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
+    shadowOpacity: 0.18,
+    shadowRadius: 8,
+    elevation: 6,
+  },
+  activeBubbleInnerStroke: {
+    ...StyleSheet.absoluteFillObject,
+    borderWidth: 0.6,
+    borderColor: 'rgba(255,255,255,0.18)',
   },
   tab: {
     flex: 1,
